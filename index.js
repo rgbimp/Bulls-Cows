@@ -5,9 +5,8 @@ console.log('-------START GAME--------')
 
 
 let countDigits = readlineSync.question('Select number from 3 to 6: \n');
-console.log(countDigits)
 while (isNaN(countDigits)) {
-  console.log(typeof(countDigits), 'input number, please!')
+  console.log('input number, please!')
   countDigits = readlineSync.question('Select number from 3 to 6: \n')
 }
 while (countDigits > 6 || countDigits < 3) {
@@ -57,7 +56,8 @@ for (let i = 0; i < COUNT_SHOTS; i++) {
     isWin = false;
     console.log(`Amount of matching digits in their places: ${bulls}
 Amount of matching digits in the wrong places: ${cows}
-Try again! You have ${COUNT_SHOTS - 1 - i} shots left`)
+Try again! You have ${COUNT_SHOTS - 1 - i} shots left
+---------------`)
   }
 }
 
