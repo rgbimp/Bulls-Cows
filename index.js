@@ -1,7 +1,15 @@
 const COUNT_SHOTS = 10;
 const readlineSync = require('readline-sync');
 
-let countDigits = readlineSync.question('---------------\nSelect number from 3 to 6: \n')
+console.log('-------START GAME--------')
+
+
+let countDigits = readlineSync.question('Select number from 3 to 6: \n');
+console.log(countDigits)
+while (isNaN(countDigits)) {
+  console.log(typeof(countDigits), 'input number, please!')
+  countDigits = readlineSync.question('Select number from 3 to 6: \n')
+}
 while (countDigits > 6 || countDigits < 3) {
   console.log('Incorrect number!!!\n---------------\n')
   countDigits = readlineSync.question('Select number from 3 to 6: \n')
@@ -56,4 +64,4 @@ Try again! You have ${COUNT_SHOTS - 1 - i} shots left`)
 (isWin) 
   ? console.log(`Number was guessed!\nYOU WIN!`)
   : console.log(`The shots are over.\n You lose:(`)
-console.log('---------------')
+console.log('--------END GAME-------')
